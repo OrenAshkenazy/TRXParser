@@ -1,0 +1,18 @@
+C:\Users\oren\Documents\Visual Studio 2012\Projects\ConsoleApplication27\ConsoleApplication27\bin\Debug\TRX2HTML.exe.config
+C:\Users\oren\Documents\Visual Studio 2012\Projects\ConsoleApplication27\ConsoleApplication27\bin\Debug\TRX2HTML.exe
+C:\Users\oren\Documents\Visual Studio 2012\Projects\ConsoleApplication27\ConsoleApplication27\bin\Debug\TRX2HTML.pdb
+C:\Users\oren\Documents\Visual Studio 2012\Projects\ConsoleApplication27\ConsoleApplication27\obj\Debug\TRX2HTML.exe
+C:\Users\oren\Documents\Visual Studio 2012\Projects\ConsoleApplication27\ConsoleApplication27\obj\Debug\TRX2HTML.pdb
+C:\Users\oren\Documents\Visual Studio 2012\Projects\ConsoleApplication27\ConsoleApplication27\obj\Debug\TRX2HTML.csprojResolveAssemblyReference.cache
+C:\Users\oren\Documents\Visual Studio 2012\Projects\TRX2HTML\ConsoleApplication27\bin\Debug\TRX2HTML.exe.config
+C:\Users\oren\Documents\Visual Studio 2012\Projects\TRX2HTML\ConsoleApplication27\obj\Debug\TRX2HTML.exe
+C:\Users\oren\Documents\Visual Studio 2012\Projects\TRX2HTML\ConsoleApplication27\obj\Debug\TRX2HTML.pdb
+C:\Users\oren\Documents\Visual Studio 2012\Projects\TRX2HTML\ConsoleApplication27\bin\Debug\TRX2HTML.exe
+C:\Users\oren\Documents\Visual Studio 2012\Projects\TRX2HTML\ConsoleApplication27\bin\Debug\TRX2HTML.pdb
+C:\Users\oren\Documents\Visual Studio 2012\Projects\TRX2HTML\ConsoleApplication27\obj\Debug\TRX2HTML.csprojResolveAssemblyReference.cache
+J:\SelaDev\OpenU\TRX2HTML\ConsoleApplication27\bin\Debug\TRX2HTML.exe.config
+J:\SelaDev\OpenU\TRX2HTML\ConsoleApplication27\obj\Debug\TRX2HTML.exe
+J:\SelaDev\OpenU\TRX2HTML\ConsoleApplication27\obj\Debug\TRX2HTML.pdb
+J:\SelaDev\OpenU\TRX2HTML\ConsoleApplication27\obj\Debug\TRX2HTML.csprojResolveAssemblyReference.cache
+J:\SelaDev\OpenU\TRX2HTML\ConsoleApplication27\bin\Debug\TRX2HTML.exe
+J:\SelaDev\OpenU\TRX2HTML\ConsoleApplication27\bin\Debug\TRX2HTML.pdb
