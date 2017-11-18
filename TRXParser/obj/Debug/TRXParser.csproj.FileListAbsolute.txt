@@ -8,3 +8,8 @@ J:\SelaDev\OpenU\TRXParser\TRXParser\bin\Debug\TRXParser.exe
 J:\SelaDev\OpenU\TRXParser\TRXParser\bin\Debug\TRXParser.pdb
 J:\SelaDev\OpenU\TRXParser\TRXParser\obj\Debug\TRXParser.exe
 J:\SelaDev\OpenU\TRXParser\TRXParser\obj\Debug\TRXParser.pdb
+C:\Users\Oren\Downloads\TRXParser\TRXParser\TRXParser\bin\Debug\TRXParser.exe.config
+C:\Users\Oren\Downloads\TRXParser\TRXParser\TRXParser\bin\Debug\TRXParser.exe
+C:\Users\Oren\Downloads\TRXParser\TRXParser\TRXParser\bin\Debug\TRXParser.pdb
+C:\Users\Oren\Downloads\TRXParser\TRXParser\TRXParser\obj\Debug\TRXParser.exe
+C:\Users\Oren\Downloads\TRXParser\TRXParser\TRXParser\obj\Debug\TRXParser.pdb
