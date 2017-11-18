@@ -43,7 +43,6 @@ namespace ConsoleApplication27
             if (tempInput == string.Empty)
             {
 
-
                 Console.Write("Could not find specified TRX file. Please try again: ");
             }
 
@@ -79,23 +78,29 @@ namespace ConsoleApplication27
                 // parse DateTime to hh:mm string format
 
                 totalTime = sum.ToString("h'h 'm'm 's's'");
-                  
-
-
-
+             
 
                 for (int i = 0; i < NL.Count; i++)
                 {
 
-
-                 
-
-                    string testName = NL[i].Attributes["testName"].Value;
-                    string result = NL[i].Attributes["outcome"].Value;
+                 string testName = NL[i].Attributes["testName"].Value;
+                 string result = NL[i].Attributes["outcome"].Value;
                    
                     if (!xnList.Count.Equals(0))
                     {
-                         category = xnList[i].Attributes["TestCategory"].Value;
+
+                        try
+                        {
+                            category = xnList[i].Attributes["TestCategory"].Value;
+
+                        }
+                        catch (Exception)
+
+                        {
+
+                            category = "";
+
+                        }
                     }
 
 
