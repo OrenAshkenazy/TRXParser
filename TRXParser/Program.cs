@@ -25,18 +25,13 @@ namespace TRXParser
             string StartTimeStr = string.Empty;
             string EndTimeStr = string.Empty;
 
-            if (args.Length > 0)
-            {
-
+            if (args.Length > 0) {
                 XmlDocument doc = new XmlDocument();
                 var tempInput = args[0];
-
-                try
-                {
+                try {
                     doc.Load(tempInput);
                 }
-                catch (Exception e)
-                {
+                catch (Exception e) {
 
                     throw new Exception(string.Format("Could not load file: {0}. Encountere error: {1}", args[0], e.Message));
 
@@ -66,43 +61,32 @@ namespace TRXParser
 
                 TimeSpan sum = EndTime - StartTime;
 
-
                 // parse DateTime to hh:mm string format
 
                 totalTime = sum.ToString("h'h 'm'm 's's'");
 
-
                 for (int i = 0; i < NL.Count; i++)
                 {
-
                     string testName = NL[i].Attributes["testName"].Value;
                     string result = NL[i].Attributes["outcome"].Value;
 
-                    if (!xnList.Count.Equals(0))
-                    {
-
-                        try
-                        {
+                    if (!xnList.Count.Equals(0)){
+                        try{
                             category = xnList[i].Attributes["TestCategory"].Value;
 
                         }
-                        catch (Exception)
-
-                        {
+                        catch (Exception){
 
                             category = "";
-
                         }
                     }
-
 
                     TestNameList.Add(testName);
                     ResList.Add(result);
                     TestCat.Add(category);
 
 
-                    if (result == "Failed")
-                    {
+                    if (result == "Failed"){
 
                         string error = NL[i].InnerXml;
                         string msgPattern = (@"<Message>[\s\S]*?<\/Message>");
@@ -119,25 +103,17 @@ namespace TRXParser
 
                         ErrMsgsList.Add(errorMsgFixed);
                         STList.Add(stackTraceFixed);
-
-
+                        
                     }
-
-
                 }
-
+                
                 HtmlTable.ConvertDataTableToHTML(TestNameList, ResList, TestCat, ErrMsgsList, STList, htmlFileName, StartTimeStr, EndTimeStr, totalTime);
-
-
+                
             }
 
-            else
-            {
-
+            else{
                 Console.WriteLine("No argument was found");
-            }
-        
-           
+            }                   
         }
     }
 }
