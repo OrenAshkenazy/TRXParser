@@ -15,50 +15,41 @@ using System.Linq;
 
 
 public partial class HtmlTable : System.Web.UI.Page
-{
-
-
-    
+{    
 
      public static void ConvertDataTableToHTML(List<string> TestNames, List<string>Results, List<string> Categories, List<string> ErrorMessages, List<string>StackTraces, string HtmlFileName, string StartTime, string EndTime, string TotalTime)
      {
 
-
-         // Intialize number of possible result statuses 
+        // Intialize number of possible result statuses 
 
          int numOfPassed = 0;
          int numOfFailed = 0;
          int numOfTimedOut = 0;
+         int value;
+         string DT = DateTime.Now.ToString("dd/MM/yyyy");
+
 
          // Get result occurrences  (e.g - Passed, Failed, Timeout)
 
          Dictionary<String, int> freqs = Results.GroupBy(item => item)
    .ToDictionary(item => item.Key,
                  item => item.Count());
+       
 
-         int value;
-
-         if (freqs.TryGetValue("Passed", out value))
-
-         {
+         if (freqs.TryGetValue("Passed", out value)){
              numOfPassed = freqs["Passed"];
          }
 
-         if (freqs.TryGetValue("Failed", out value))
-         {
+         if (freqs.TryGetValue("Failed", out value)){
              numOfFailed = freqs["Failed"];
          }
 
 
-         if (freqs.TryGetValue("Timeout", out value))
+         if (freqs.TryGetValue("Timeout", out value)){
 
-         {
-
-             numOfTimedOut = freqs["Timeout"];
-         
+             numOfTimedOut = freqs["Timeout"];        
          }
          
-         string DT = DateTime.Now.ToString("dd/MM/yyyy");
 
          StringBuilder sb = new StringBuilder();
          sb.AppendLine("<html>");
@@ -96,19 +87,19 @@ public partial class HtmlTable : System.Web.UI.Page
 
          #region HTML Table CSS
          sb.AppendLine(@"<style> body {
-    width: 900px;
-    margin: 40px auto;
-    font-family: 'trebuchet MS', 'Lucida sans', Arial;
-    font-size: 14px;
-    color: #444;
-}
+        width: 900px;
+        margin: 40px auto;
+        font-family: 'trebuchet MS', 'Lucida sans', Arial;
+        font-size: 14px;
+        color: #444;
+    }
 
-table {
-    *border-collapse: collapse; /* IE7 and lower */
-    border-spacing: 0;
-    width: 100%;    
-    margin-top: 50px;
-}
+    table {
+        *border-collapse: collapse; /* IE7 and lower */
+        border-spacing: 0;
+        width: 100%;    
+        margin-top: 50px;
+    }
 
 .bordered {
   
@@ -309,8 +300,6 @@ table {
 
 #endregion
          sb.AppendLine("</head>");
-
-
          sb.AppendLine("<body>");
          sb.AppendLine(@"<div id=""chart_div""></div>");
          sb.AppendLine(@"<table class=""bordered""><thead>");
@@ -335,7 +324,7 @@ table {
          sb.AppendLine(@"<th class=""auto-style5"">Duration</th>");
          sb.AppendLine("</tr></thead>");
          sb.AppendLine(string.Format(@"<tr><td>{0}</td>",
-                HttpUtility.HtmlEncode("")));
+         HttpUtility.HtmlEncode("")));
          sb.AppendLine(string.Format(@"<td>{0}</td>",
          HttpUtility.HtmlEncode(DT)));
          sb.AppendLine(string.Format(@"<td>{0}</td>",
@@ -369,34 +358,23 @@ table {
          sb.AppendLine("</tr></thead>");
 
 
-         for (int i = 0; i < TestNames.Count; ++i)
-         {
-            
-
-
-
+         for (int i = 0; i < TestNames.Count; ++i){
              sb.AppendLine(string.Format(@"<tr><td>{0}</td>",
-                 HttpUtility.HtmlEncode(TestNames[i])));
+             HttpUtility.HtmlEncode(TestNames[i])));
 
-             if (Results[i] == "Timeout")
-
-             {
+             if (Results[i] == "Timeout"){
 
                  sb.AppendLine(string.Format(@"<td class=""auto-style11"">{0}</td>",
-                   HttpUtility.HtmlEncode(Results[i])));
-             
+                   HttpUtility.HtmlEncode(Results[i])));             
              }
 
 
-             if (Results[i] == "Failed")
-             {
+             if (Results[i] == "Failed"){
                  sb.AppendLine(string.Format(@"<td class=""auto-style10"">{0}</td>",
                    HttpUtility.HtmlEncode(Results[i])));
              }
 
-             if (Results[i] == "Passed")
-
-             {
+             if (Results[i] == "Passed"){
 
                  sb.AppendLine(string.Format(@"<td class=""auto-style9"">{0}</td>",
                     HttpUtility.HtmlEncode(Results[i])));
@@ -407,42 +385,31 @@ table {
 
 
 
-             if (Results[i] == "Failed")
-             {
-                 for (int j = 0; j < ErrorMessages.Count; j++)
-                 {
+             if (Results[i] == "Failed"){
+                 for (int j = 0; j < ErrorMessages.Count; j++){
 
                      sb.AppendLine(string.Format(@"<td>{0}</td>",
                      HttpUtility.HtmlEncode(ErrorMessages[j])));
-
                      sb.AppendLine(string.Format(@"<td>{0}</td>",
                      HttpUtility.HtmlEncode("")));
 
                      //sb.AppendLine(string.Format("<td>\"{0}\"</td>",
                      //HttpUtility.HtmlEncode(StackTraces[j])));
-
                      ErrorMessages.RemoveAt(j);
                      break;
                  }
 
-
              }
 
-             else
-
-             {
+             else {
 
                  // Create an empty row for passed test case (No Error Message)
-
                  sb.AppendLine(string.Format(@"<td>{0}</td>",
                         HttpUtility.HtmlEncode("")));
-
                  // Create an empty row for comments (Added Manually)
-
-
+                 
                  sb.AppendLine(string.Format(@"<td>{0}</td>",
                         HttpUtility.HtmlEncode("")));
-
              }
             
          }
@@ -451,12 +418,8 @@ table {
          sb.AppendLine("</body>");
          sb.AppendLine("</html>");
          string result = sb.ToString();
-
-         using (FileStream fs = File.Create(HtmlFileName, 1024))
-         {
-             Byte[] info = new UTF8Encoding(true).GetBytes(result);
-            
-
+         using (FileStream fs = File.Create(HtmlFileName, 1024)){
+             Byte[] info = new UTF8Encoding(true).GetBytes(result);          
              fs.Write(info, 0, info.Length);
          }
 
@@ -470,8 +433,7 @@ table {
              }
          }
 
-
          Console.WriteLine("");
        
     }
-    }
+ }
