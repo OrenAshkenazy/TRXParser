@@ -1,6 +1,0 @@
-c:\users\oren\documents\visual studio 2012\Projects\ConsoleApplication27\ConsoleApplication27\obj\Debug\ConsoleApplication27.csprojResolveAssemblyReference.cache
-C:\Users\oren\Documents\Visual Studio 2012\Projects\ConsoleApplication27\ConsoleApplication27\bin\Debug\TRX2HTML.exe.config
-C:\Users\oren\Documents\Visual Studio 2012\Projects\ConsoleApplication27\ConsoleApplication27\bin\Debug\TRX2HTML.exe
-C:\Users\oren\Documents\Visual Studio 2012\Projects\ConsoleApplication27\ConsoleApplication27\bin\Debug\TRX2HTML.pdb
-C:\Users\oren\Documents\Visual Studio 2012\Projects\ConsoleApplication27\ConsoleApplication27\obj\Debug\TRX2HTML.exe
-C:\Users\oren\Documents\Visual Studio 2012\Projects\ConsoleApplication27\ConsoleApplication27\obj\Debug\TRX2HTML.pdb
