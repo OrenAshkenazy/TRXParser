@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Report - {{ReportDate}}</title>
+    <link rel="stylesheet" type="text/css" href="ReportStyles.css">
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        // Placeholder for data injection for the chart
+        {{ChartScriptDataInjection}}
+    </script>
+    <script type="text/javascript" src="ReportChart.js"></script>
+</head>
+<body>
+    <h1>Test Execution Report</h1>
+    <div id="chart_div" style="width: 450px; height: 300px; margin: 20px auto;"></div>
+
+    <h2>Summary</h2>
+    <table class="bordered">
+        <thead>
+            <tr>
+                <th>Report Generated</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Total Duration</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ReportDate}}</td>
+                <td>{{StartTime}}</td>
+                <td>{{EndTime}}</td>
+                <td>{{TotalDuration}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Test Results ({{TotalTests}} Total)</h2>
+    <p>Passed: {{PassedCount}} | Failed: {{FailedCount}} | Timeout: {{TimeoutCount}}</p>
+    <table class="bordered zebra">
+        <thead>
+            <tr>
+                <th>Test Name</th>
+                <th>Result</th>
+                <th>Category</th>
+                <th>Duration (s)</th>
+                <th>Error Message</th>
+                <th>Stack Trace</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{TestResultsTable}}
+            <!-- Test result rows will be generated here by C# -->
+        </tbody>
+    </table>
+</body>
+</html>
